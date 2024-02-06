@@ -11,6 +11,8 @@ using namespace std;
     }
 
  };
+
+ // insert at Tail 
  void insertATTAIL(Node *&head,int val){
     Node *Newnode=new Node(val);
     if(head==NULL){
@@ -26,6 +28,10 @@ using namespace std;
     cout<<" sucessfully inserted at tail ."<<endl;
 
  }
+
+
+ // print_link_list 
+
  void printLinklst(Node *head){
     Node *tmp=head;
     cout <<" your Link list is :"<<endl;
@@ -35,6 +41,7 @@ using namespace std;
     }
     cout <<endl;
  }
+ 
  //inserted any position function 
  void inserted_Any_position(Node *head,int pos,int val){
     Node *newNode=new Node(val);
@@ -67,12 +74,19 @@ void DeleteNode(Node *head,int pos){
     tmp->next=tmp->next->next;
     delete deleteNode;
 }
+// delete Node end 
+
+
+//Deleted Head
 void DeletedHead(Node *&head){
     Node *Deletedhead=head;
     head=head->next;
     delete Deletedhead;
 }
-// delete Node end 
+// deleted Head end 
+
+
+// main function start 
 int main(){
     Node *head=NULL;
    while(true){
