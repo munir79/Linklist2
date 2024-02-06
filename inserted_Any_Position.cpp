@@ -56,6 +56,23 @@ void inserted_At_head(Node *&head,int val){
 }
 
 //inserted at head end 
+
+// delete Node 
+void DeleteNode(Node *head,int pos){
+    Node *tmp=head;
+    for(int i=0;i<=pos-1;i++){
+        tmp=tmp->next;
+    }
+    Node *deleteNode=tmp->next;
+    tmp->next=tmp->next->next;
+    delete deleteNode;
+}
+void DeletedHead(Node *&head){
+    Node *Deletedhead=head;
+    head=head->next;
+    delete Deletedhead;
+}
+// delete Node end 
 int main(){
     Node *head=NULL;
    while(true){
@@ -64,7 +81,9 @@ int main(){
     cout<<"option :2 print Link List "<<endl;
     cout<<" option:3 Insert at nay Position "<<endl;
     cout<<"option :4 Insert at head "<<endl;
-    cout<<"option :5 Terminate "<<endl;
+    cout<<"option :5 Delete A Node "<<endl;
+    cout<<"option :6 Delete Head"<<endl;
+    cout<<"option :7 Terminate "<<endl;
 
     cout<<endl <<endl;
     cin>>op;
@@ -101,6 +120,15 @@ int main(){
 
     }
     else if(op==5){
+        int pos;
+        cout<<" Enter a Position that you Deleted"<<endl;
+        cin>>pos;
+        DeleteNode(head,pos);
+    }
+    else if(op==6){
+        DeletedHead(head);
+    }
+    else if(op==7){
         cout<< " your programme is terminate. "<<endl;
         break;
         
