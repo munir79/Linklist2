@@ -34,6 +34,7 @@ using namespace std;
     }
     cout <<endl;
  }
+ //inserted any position function 
  void inserted_Any_position(Node *head,int pos,int val){
     Node *newNode=new Node(val);
     Node *tmp=head;
@@ -45,6 +46,7 @@ using namespace std;
     cout<<"inserted value in position "<<pos<<endl;
 
  }
+ 
 
 int main(){
     Node *head=NULL;
@@ -66,6 +68,7 @@ int main(){
     else if(op==2){
         printLinklst(head);
     }
+    // inserted any position 
     else if(op==3){
         int val,pos;
         cout <<"enter a Position:"<<endl;
@@ -74,6 +77,8 @@ int main(){
         cin>>val;
         inserted_Any_position(head,pos,val);
     }
+
+    // inserted any position end 
     else if(op==4){
         break;
     }
