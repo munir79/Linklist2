@@ -23,6 +23,7 @@ using namespace std;
     }
     //tmp akhon las node a 
     tmp->next=Newnode;
+    cout<<" sucessfully inserted at tail ."<<endl;
 
  }
  void printLinklst(Node *head){
@@ -43,11 +44,18 @@ using namespace std;
     }
     newNode->next=tmp->next;
     tmp->next=newNode;
-    cout<<"inserted value in position "<<pos<<endl;
+    cout<<" sucessfully inserted value in position "<<pos<<endl;
 
  }
- 
+ // inserted at head 
+void inserted_At_head(Node *&head,int val){
+    Node *NewNode=new Node (val);
+    NewNode->next=head;
+    head=NewNode;
+    cout <<" inserted at head "<<endl;
+}
 
+//inserted at head end 
 int main(){
     Node *head=NULL;
    while(true){
@@ -55,7 +63,8 @@ int main(){
     cout<<"option :1 insert at tail"<<endl;
     cout<<"option :2 print Link List "<<endl;
     cout<<" option:3 Insert at nay Position "<<endl;
-    cout<<"option :4 Terminate "<<endl;
+    cout<<"option :4 Insert at head "<<endl;
+    cout<<"option :5 Terminate "<<endl;
 
     cout<<endl <<endl;
     cin>>op;
@@ -75,12 +84,26 @@ int main(){
         cin>>pos;
         cout<<"enter a value :"<<endl;
         cin>>val;
-        inserted_Any_position(head,pos,val);
+        if(pos==0){
+            inserted_At_head(head,val);
+        }
+        else {
+            inserted_Any_position(head,pos,val);
+        }
     }
 
     // inserted any position end 
     else if(op==4){
+        int val;
+        cout <<" enter a value:"<<endl;
+        cin>>val;
+        inserted_At_head(head,val);
+
+    }
+    else if(op==5){
+        cout<< " your programme is terminate. "<<endl;
         break;
+        
     }
    }
 
